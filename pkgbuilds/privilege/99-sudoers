@@ -1,0 +1,11 @@
+## Uncomment to allow members of group wheel to execute any command
+%wheel ALL=(ALL) ALL
+
+## Disable password prompt timeout
+Defaults passwd_timeout=0
+
+## Enable insults
+Defaults insults
+
+## Default editor for visudo
+Defaults      editor=/usr/bin/nano, !env_editor
