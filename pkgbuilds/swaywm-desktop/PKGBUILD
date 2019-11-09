@@ -1,0 +1,50 @@
+# Maintainer: Dryamov Vyacheslav <dryamov.dev@gmail.com>
+pkgname=swaywm-desktop
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Sway desktop"
+arch=('any')
+url="https://github.com/arpi4/PKGBUILDs"
+license=('GPL')
+groups=(swaywm)
+depends=(
+	sway
+	swaybg
+	swayidle
+	waybar
+	termite
+	fzf
+	mako
+	swaylock
+	otf-font-awesome 
+)
+#makedepends=()
+#checkdepends=()
+#optdepends=()
+#provides=()
+#conflicts=()
+#replaces=()
+#backup=()
+#options=()
+#install=swaywm-desktop.install
+#changelog=
+source=("sway.config"
+        "waybar.config"
+	"waybar.style.css"
+	"termite.config"
+	"sway-launcher-desktop.sh")
+
+md5sums=('SKIP'
+	 'SKIP'
+	 'SKIP'
+	 'SKIP'
+	 'SKIP')
+
+package() {
+	install -Dm 0644 sway.config "$pkgdir/etc/skel/.config/sway/config"
+	install -Dm 0644 waybar.config "$pkgdir/etc/skel/.config/waybar/config"
+	install -Dm 0644 waybar.style.css "$pkgdir/etc/skel/.config/waybar/waybar.style.css"
+	install -Dm 0644 termite.config "$pkgdir/etc/skel/.config/termite/config"
+	install -Dm 0644 sway-launcher-desktop.sh "$pkgdir/usr/local/bin/sway-launcher-desktop.sh"
+	chmod +x "$pkgdir/usr/local/bin/sway-launcher-desktop.sh"
+}
