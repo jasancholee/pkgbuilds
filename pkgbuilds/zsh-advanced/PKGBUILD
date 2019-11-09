@@ -1,0 +1,38 @@
+# Maintainer: Dryamov Vyacheslav <dryamov.dev@gmail.com>
+pkgname=zsh-advanced
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Zsh redy to use with autompletions and best pr"
+arch=('any')
+url="https://github.com/arpi4/PKGBUILDs"
+license=('GPL')
+groups=(swaywm)
+depends=(
+	'zsh'
+        'pkgfile'
+        'grc'
+        'zsh-autosuggestions'
+        'zsh-syntax-highlighting'
+        'grml-zsh-config'
+        'zsh-completions'
+)
+#makedepends=()
+#checkdepends=()
+#optdepends=()
+#provides=()
+#conflicts=()
+#replaces=()
+#backup=()
+#options=()
+#install=swaywm-desktop.install
+#changelog=
+source=("zshrc.local"
+        "zshrc.pre")
+
+md5sums=('SKIP'
+         'SKIP')
+
+package() {
+	install -Dm 644 zshrc.local "$pkgdir/etc/skel/.zshrc.local"
+	install -Dm 644 zshrc.pre "$pkgdir/etc/skel/.zshrc.pre"
+}

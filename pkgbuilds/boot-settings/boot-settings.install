@@ -1,0 +1,9 @@
+pre_install () {
+ mv /boot/cmdline.txt /boot/cmdline.txt.back
+ mv /boot/config.txt /boot/config.txt.back
+}
+
+post_remove () {
+ mv /boot/cmdline.txt.back /boot/cmdline.txt
+ mv /boot/config.txt.back /boot/config.txt
+}

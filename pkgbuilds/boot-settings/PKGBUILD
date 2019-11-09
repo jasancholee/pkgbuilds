@@ -11,11 +11,13 @@ depends=(
 	'raspberrypi-bootloader'
 	'raspberrypi-bootloader-x')
 
-backup=('boot/cmdline.txt' 'boot/config.txt')
+#backup=(boot/cmdline.txt)
 source=("cmdline.txt"
-        "config.txt")
+        "config.txt"
+	"boot-settings.install")
 
 md5sums=('SKIP'
+	 'SKIP'
 	 'SKIP')
 
 package() {

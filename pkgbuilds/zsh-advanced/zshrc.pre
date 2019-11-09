@@ -1,0 +1,5 @@
+function repo-upload() {
+  scp $1 dryamov_dev@dryamov.dev:/home/custompkgs/
+  echo "$1 uploaded to dryamov.dev"
+}
+   
