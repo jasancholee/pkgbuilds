@@ -1,0 +1,24 @@
+# Maintainer: Dryamov Vyacheslav <dryamov.dev@gmail.com>
+pkgname=boot-settings
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="config.txt & cmdline.txt for RPI4"
+arch=('any')
+url="https://github.com/arpi4/PKGBUILDs"
+license=('GPL')
+groups=(swaywm)
+depends=(
+	'raspberrypi-bootloader'
+	'raspberrypi-bootloader-x')
+
+backup=('boot/cmdline.txt' 'boot/config.txt')
+source=("cmdline.txt"
+        "config.txt")
+
+md5sums=('SKIP'
+	 'SKIP')
+
+package() {
+	install -Dm 755 cmdline.txt "$pkgdir/boot/cmdline.txt"
+	install -Dm 755 config.txt "$pkgdir/boot/config.txt"
+}

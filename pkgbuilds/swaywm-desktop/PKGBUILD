@@ -16,7 +16,10 @@ depends=(
 	fzf
 	mako
 	swaylock
-	otf-font-awesome 
+	otf-font-awesome
+	grim
+	slurp
+	wl-clipboard
 )
 #makedepends=()
 #checkdepends=()
