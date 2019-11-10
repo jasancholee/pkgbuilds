@@ -24,7 +24,7 @@ depends=(
 #replaces=()
 #backup=()
 #options=()
-#install=swaywm-desktop.install
+install=zsh-advanced.install
 #changelog=
 source=("zshrc.local"
         "zshrc.pre")
