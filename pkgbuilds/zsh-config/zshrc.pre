@@ -1,7 +1,0 @@
-function repo-upload() {
-  scp $1 dryamov_dev@rpi4.cf:/home/custompkgs/
-  echo "$1 uploaded to dryamov.dev"
-}
-path+=('/opt/vc/bin')
-export PATH
-   
