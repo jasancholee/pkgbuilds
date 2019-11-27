@@ -15,7 +15,7 @@ depends=(
         'zsh-syntax-highlighting'
         'grml-zsh-config'
         'zsh-completions'
-        'powerline2'
+        'zsh-theme-powerlevel9k'
         'awesome-terminal-fonts'
         'powerline-fonts'
 )
