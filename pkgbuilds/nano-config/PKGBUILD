@@ -4,25 +4,15 @@ pkgver=0.0.1
 pkgrel=1
 pkgdesc="Put cool nano config to skel"
 arch=('any')
-url="https://github.com/arpi4/PKGBUILDs"
+url="https://github.com/dryamov/rpi4"
 license=('GPL')
 depends=(
 	'nano'
 )
-#makedepends=()
-#checkdepends=()
-#optdepends=()
-#provides=()
-#conflicts=()
-#replaces=()
-#backup=()
-#options=()
-#install=swaywm-desktop.install
-#changelog=
 source=("nanorc")
 
 md5sums=('SKIP')
 
 package() {
-	install -Dm 644 nanorc "$pkgdir/etc/skel/nano/nanorc"
+	install -Dm 644 nanorc "$pkgdir/etc/skel/.config/nano/nanorc"
 }
