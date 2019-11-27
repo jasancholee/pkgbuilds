@@ -4,7 +4,7 @@ pkgver=0.0.1
 pkgrel=1
 pkgdesc="Sway desktop"
 arch=('any')
-url="https://github.com/arpi4/PKGBUILDs"
+url="https://github.com/Dryamov/rpi4"
 license=('GPL')
 groups=(swaywm)
 depends=(
@@ -21,16 +21,6 @@ depends=(
 	slurp
 	wl-clipboard
 )
-#makedepends=()
-#checkdepends=()
-#optdepends=()
-#provides=()
-#conflicts=()
-#replaces=()
-#backup=()
-#options=()
-#install=swaywm-desktop.install
-#changelog=
 source=("sway.config"
         "waybar.config"
 	"waybar.style.css"
@@ -46,7 +36,7 @@ md5sums=('SKIP'
 package() {
 	install -Dm 0644 sway.config "$pkgdir/etc/skel/.config/sway/config"
 	install -Dm 0644 waybar.config "$pkgdir/etc/skel/.config/waybar/config"
-	install -Dm 0644 waybar.style.css "$pkgdir/etc/skel/.config/waybar/waybar.style.css"
+	install -Dm 0644 waybar.style.css "$pkgdir/etc/skel/.config/waybar/style.css"
 	install -Dm 0644 termite.config "$pkgdir/etc/skel/.config/termite/config"
 	install -Dm 0644 sway-launcher-desktop.sh "$pkgdir/usr/local/bin/sway-launcher-desktop.sh"
 	chmod +x "$pkgdir/usr/local/bin/sway-launcher-desktop.sh"
