@@ -12,7 +12,7 @@ depends=(
 )
 backup=(etc/sudoers.d/99-sudoers)
 source=("99-sudoers")
-md5sums=('SKIP')
+md5sums=('3b93cdb694aeaaa01aabc4e28fb00179')
 
 package() {
 	install -Dm 0440 99-sudoers "$pkgdir/etc/sudoers.d/99-sudoers"
