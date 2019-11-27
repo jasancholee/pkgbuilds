@@ -2,25 +2,15 @@
 pkgname=privilege
 pkgver=0.0.1
 pkgrel=1
-pkgdesc="sudo settings and other"
+pkgdesc="sudo settings and polkit"
 arch=('any')
 url="https://github.com/arpi4/PKGBUILDs"
 license=('GPL')
-groups=(swaywm)
 depends=(
 	sudo
 	polkit
 )
-#makedepends=()
-#checkdepends=()
-#optdepends=()
-#provides=()
-#conflicts=()
-#replaces=()
 backup=(etc/sudoers.d/99-sudoers)
-#options=()
-#install=swaywm-desktop.install
-#changelog=
 source=("99-sudoers")
 md5sums=('SKIP')
 
