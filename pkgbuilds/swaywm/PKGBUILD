@@ -25,6 +25,7 @@ source=("sway.config"
         "waybar.config"
 	"waybar.style.css"
 	"termite.config"
+	"mako.config"
 	"sway-launcher-desktop.sh")
 
 md5sums=('6780e55805ae17b66fa431add3c95b92'
@@ -38,6 +39,7 @@ package() {
 	install -Dm 0644 waybar.config "$pkgdir/etc/skel/.config/waybar/config"
 	install -Dm 0644 waybar.style.css "$pkgdir/etc/skel/.config/waybar/style.css"
 	install -Dm 0644 termite.config "$pkgdir/etc/skel/.config/termite/config"
+	install -Dm 0644 mako.config "$pkgdir/etc/skel/.config/mako/config"
 	install -Dm 0644 sway-launcher-desktop.sh "$pkgdir/usr/local/bin/sway-launcher-desktop.sh"
 	chmod +x "$pkgdir/usr/local/bin/sway-launcher-desktop.sh"
 }
