@@ -1,8 +1,8 @@
 # Maintainer: Dryamov Vyacheslav <dryamov.dev@gmail.com>
-pkgname=swaywm-desktop
+pkgname=swaywm
 pkgver=0.0.1
 pkgrel=1
-pkgdesc="Sway desktop"
+pkgdesc="Sway tiling window manager + mako + waybar + others"
 arch=('any')
 url="https://github.com/Dryamov/rpi4"
 license=('GPL')
@@ -27,11 +27,11 @@ source=("sway.config"
 	"termite.config"
 	"sway-launcher-desktop.sh")
 
-md5sums=('SKIP'
-	 'SKIP'
-	 'SKIP'
-	 'SKIP'
-	 'SKIP')
+md5sums=('6780e55805ae17b66fa431add3c95b92'
+         'f795b0792429cc71e9d554b409484e22'
+         '1844763d66470bca58c45ca83e43ac8e'
+         'b297807068151aae7bb3eebf6701d0d3'
+         '2d069708a58f93abf842cc67605d4ed1')
 
 package() {
 	install -Dm 0644 sway.config "$pkgdir/etc/skel/.config/sway/config"
