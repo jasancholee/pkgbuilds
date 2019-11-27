@@ -1,5 +1,5 @@
 # Maintainer: Dryamov Vyacheslav <dryamov.dev@gmail.com>
-pkgname=zsh-advanced
+pkgname=zsh-config
 pkgver=0.0.1
 pkgrel=1
 pkgdesc="Zsh redy to use with autompletions and best pr"
@@ -15,22 +15,16 @@ depends=(
         'zsh-syntax-highlighting'
         'grml-zsh-config'
         'zsh-completions'
+        'powerline2'
+        'awesome-terminal-fonts'
+        'powerline-fonts'
 )
-#makedepends=()
-#checkdepends=()
-#optdepends=()
-#provides=()
-#conflicts=()
-#replaces=()
-#backup=()
-#options=()
-install=zsh-advanced.install
-#changelog=
+install=zsh-config.install
 source=("zshrc.local"
         "zshrc.pre")
 
-md5sums=('SKIP'
-         'SKIP')
+md5sums=('60d2294019a71954e786d4325957d6e3'
+         '4434de8c8ad27636cb24e04943e62404')
 
 package() {
 	install -Dm 644 zshrc.local "$pkgdir/etc/skel/.zshrc.local"

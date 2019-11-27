@@ -1,5 +1,27 @@
-typeset -g -A key
+export TERM="xterm-256color"
+export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator dir vcs)
+export POWERLEVEL9K_COLOR_SCHEME='dark'
+export POWERLEVEL9K_DISABLE_RPROMPT=true
+export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+export POWERLEVEL9K_MODE='awesome-fontconfig'
+export POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-stash git-remotebranch git-tagname)
 
+export GDK_BACKEND="wayland"
+export QT_QPA_PLATFORM="wayland-egl"
+export CLUTTER_BACKEND="wayland"
+export MOZ_ENABLE_WAYLAND="1"
+export QT_QPA_PLATFORM="wayland-egl"
+export SDL_VIDEODRIVER="wayland"
+export CLUTTER_BACKEND="wayland"
+export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+export ECORE_EVAS_ENGINE="wayland_egl"
+export ELM_ENGINE="wayland_egl"
+export QT_STYLE_OVERRIDE=""
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export _JAVA_AWT_WM_NONREPARENTING="1"
+
+typeset -g -A key
 key[Home]="${terminfo[khome]}"
 key[End]="${terminfo[kend]}"
 key[Insert]="${terminfo[kich1]}"
@@ -62,8 +84,6 @@ zstyle ':completion:*' rehash true
 zstyle ':completion::complete:*' gain-privileges 1
 
 
-
-
 if [ -f /usr/bin/grc ]; then
  alias gcc="grc --colour=auto gcc"
  alias irclog="grc --colour=auto irclog"
@@ -92,16 +112,15 @@ if [ -f /etc/zsh/keephack ]; then
         source /etc/zsh/keephack
 fi
 
-export TERM=xterm-color
+if [ -f /etc/profile.d/vte.sh ]; then
+        source /etc/profile.d/vte.sh
+fi
 
-GDK_BACKEND=wayland
-QT_QPA_PLATFORM=wayland-egl
-CLUTTER_BACKEND=wayland
+if [ -f /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme ]; then
+        source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+fi        
 
-export MOZ_ENABLE_WAYLAND=1
-export QT_QPA_PLATFORM=wayland-egl
 
-autoload -Uz promptinit
-promptinit
-prompt off
-
+export QT_STYLE_OVERRIDE=""
+export QT_QPA_PLATFORMTHEME="qt5ct"
+#export XDG_CURRENT_DESKTOP="Unity"
