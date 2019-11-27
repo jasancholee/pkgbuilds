@@ -6,22 +6,11 @@ pkgdesc="Set console font and etc"
 arch=('any')
 url="https://github.com/arpi4/PKGBUILDs"
 license=('GPL')
-depends=("localepurge"
-        "terminus-font"
-        "man-pages-ru"
+depends=("terminus-font"
+         "man-pages-ru"
 )
-#makedepends=()
-#checkdepends=()
-#optdepends=()
-#provides=()
-#conflicts=()
-#replaces=()
 backup=(etc/locale.conf)
-#options=()
-#install=swaywm-desktop.install
-#changelog=
 source=("locale.gen"
-	"locale.nopurge"
         "vconsole.conf"
         "locale.conf"
         "user.locale.conf"
@@ -35,7 +24,6 @@ md5sums=('SKIP'
 
 package() {
 	install -Dm 0644 locale.gen "$pkgdir/etc/locale.gen"
-	install -Dm 0644 locale.nopurge "$pkgdir/etc/locale.nopurge"
 	install -Dm 0644 vconsole.conf "$pkgdir/etc/vconsole.conf"
 	install -Dm 0644 locale.conf "$pkgdir/etc/locale.conf"
 	install -Dm 0644 user.locale.conf "$pkgdir/etc/skel/.config/locale.conf"
