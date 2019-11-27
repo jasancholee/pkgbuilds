@@ -1,0 +1,19 @@
+# Maintainer: Dryamov Vyacheslav <dryamov.dev@gmail.com>
+pkgname=repo-upload
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Script to upload package to rpi4.cf"
+arch=('any')
+url="https://github.com/Dryamov/rpi4"
+license=('GPL')
+depends=('openssh'
+	'pacman'
+)
+source=("repo-upload.sh")
+
+md5sums=('815d845ad0901bec845847597e641efa')
+
+package() {
+	install -Dm 0644 repo-upload.sh "$pkgdir/usr/local/bin/repo-upload"
+	chmod +x "$pkgdir/usr/local/bin/repo-upload"
+}
