@@ -1,0 +1,25 @@
+pkgname=rpi4-network
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Systemd-networkd settings"
+arch=('any')
+license=('multiple')
+depends=('systemd')
+install=rpi4-network.install
+source=(
+    rpi4-network.install
+    en.network
+    eth.network
+    wlan.network
+)
+sha256sums=('SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP')
+
+package() {
+   install -Dm 644 en.network "$pkgdir/etc/systemd/network/en.network"
+   install -Dm 644 eth.network "$pkgdir/etc/systemd/network/eth.network"
+   install -Dm 644 wlan.network "$pkgdir/etc/systemd/network/wlan.network"
+}
+
