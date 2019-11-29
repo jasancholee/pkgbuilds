@@ -3,7 +3,6 @@ pkgver=0.0.1
 pkgrel=1
 pkgdesc="Systemd-firstboot service to setup rpi4"
 arch=('any')
-url=""
 license=('multiple')
 depends=('systemd')
 install=rpi4-firstboot.install

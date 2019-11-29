@@ -1,4 +1,0 @@
-post_install() {
-  rm -rfv /etc/{machine-id,localtime,hostname,shadow,locale.conf}
-  systemctl enable systemd-firstboot.service
-}
