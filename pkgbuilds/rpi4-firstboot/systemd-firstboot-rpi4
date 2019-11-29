@@ -1,7 +1,9 @@
 #!/bin/bash
-sleep 5;
+sleep 2;
 clear;
 echo "Set up non root user";
 SUDO_USERNAME="$(systemd-ask-password --echo 'New sudo user name:')";
 SUDO_USERNAME_PASWWDORD="$(systemd-ask-password --echo 'enter password:')";
-useradd -m -g wheel -p "$SUDO_USERNAME_PASWWORD" "$SUDO_USERNAME" && echo "user $SUDO_USERNAME created!" || echo 'user $SUDO_USERNAME not created!';
+useradd -m -g wheel "$SUDO_USERNAME" && echo "user $SUDO_USERNAME created!" || echo 'user $SUDO_USERNAME not created!';
+passwd "$SUDO_USERNAME";
+systemctl disable systemd-firstboot;
