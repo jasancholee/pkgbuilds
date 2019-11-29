@@ -1,0 +1,24 @@
+pkgname=rpi4-firstboot
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Systemd-firstboot service to setup rpi4"
+arch=('any')
+url=""
+license=('multiple')
+depends=('systemd')
+install=rpi4-firstboot.install
+source=(
+    10-systemd-firstboot.service
+    rpi4-firstboot.install
+    systemd-firstboot-rpi4
+)
+sha256sums=('SKIP'
+            'SKIP'
+            'SKIP')
+
+package() {
+  install -Dm 644 10-systemd-firstboot.service  "$pkgdir/usr/lib/systemd/system/systemd-firstboot.service.d/10-systemd-firstboot.service"
+  install -Dm 755 systemd-firstboot-rpi4 "$pkgdir/usr/bin/systemd-firstboot-rpi4"
+  chmod +x "$pkgdir/usr/bin/systemd-firstboot-rpi4"
+}
+

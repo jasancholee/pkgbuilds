@@ -1,0 +1,27 @@
+#!/bin/bash
+echo "We get starred!";
+NEW_HOSTNAME="$(systemd-ask-password --echo 'Enter new hostname:')"
+hostnamectl set-hostname "$NEW_HOSTNAME" && echo "hostname set to $NEW_HOSTNAME" || echo "hostname set to $NEW_HOSTNAME failed"
+echo "$NEW_HOSTNAME" > /etc/hostname && echo "/etc/hostname updated" || echo "/etc/hostname update failed"
+echo "127.0.0.1    localhost" > /etc/hosts
+echo "::1    localhost" >> /etc/hosts
+echo "127.0.1.1    $NEW_HOSTNAME.localdomain  $NEW_HOSTNAME" >> /etc/hosts"
+echo "/etc/hosts updated!"
+
+
+hostnamectl status
+sleep 5;
+SET_NTP_TRUE="$(systemd-ask-password --echo 'set netwrok time sync?:')"
+if ("$SET_NTP_TRUE"); then {
+   timedatectl set-ntp true && echo "network time sync OK" || echo "network time sync failed";
+   timedatectl status
+}; else {
+   timedatectl set-ntp false && echo "network time sync OK" || echo "network time sync failed";
+   timedatectl status
+}
+fi
+sleep 5;
+SUDO_USERNAME="$(systemd-ask-password --echo 'New sudo user name:')"
+SUDO_USERNAME_PASWWDORD="$(systemd-ask-password --echo 'enter password:')"
+SUDO_USERNAME_PASWWDORD_2="$(systemd-ask-password --echo 're-enter password:')"
+useradd -m -g wheel -p "$SUDO_USERNAME_PASWWORD" "$SUDO_USERNAME" && echo "user $SUDO_USERNAME created!" || echo 'user $SUDO_USERNAME not created!'
