@@ -4,6 +4,7 @@ pkgrel=1
 pkgdesc="Services, firmware and udev rules to get integrated bluetooth running in Raspberry Pi 4"
 arch=('any')
 url=""
+groups=('rpi4-base')
 license=('multiple')
 depends=('bluez-utils'
          'bluez')

@@ -1,6 +1,7 @@
 pkgname=rpi4-firstboot
 pkgver=0.0.1
 pkgrel=1
+groups=('rpi4-base')
 pkgdesc="Systemd-firstboot service to setup rpi4"
 arch=('any')
 license=('multiple')

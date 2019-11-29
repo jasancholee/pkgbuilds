@@ -6,6 +6,7 @@ pkgdesc="Set console font and etc"
 arch=('any')
 url="https://github.com/arpi4/PKGBUILDs"
 license=('GPL')
+install=localization.install
 depends=("terminus-font"
 )
 backup=(etc/locale.conf)
@@ -13,12 +14,14 @@ source=("locale.gen"
         "vconsole.conf"
         "locale.conf"
         "user.locale.conf"
+        "localization.install"
 	)
 
 md5sums=('263e4175e55bf27eeb4f45ab1fd02749'
          'ae1e927cf76d0f65869e30bdde429b99'
          '515e266de83893e507653b27d12a46f0'
-         '515e266de83893e507653b27d12a46f0')
+         '515e266de83893e507653b27d12a46f0'
+         'SKIP')
 
 package() {
 	install -Dm 0644 locale.gen "$pkgdir/etc/locale.gen"

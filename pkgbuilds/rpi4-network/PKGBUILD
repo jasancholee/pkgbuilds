@@ -1,6 +1,7 @@
 pkgname=rpi4-network
 pkgver=0.0.1
 pkgrel=1
+groups=('rpi4-base')
 pkgdesc="Systemd-networkd settings"
 arch=('any')
 license=('multiple')
