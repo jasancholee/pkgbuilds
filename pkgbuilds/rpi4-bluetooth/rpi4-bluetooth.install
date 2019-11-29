@@ -1,5 +1,6 @@
 post_install() {
   echo 'blacklist btsdio' >> /etc/modprobe.d/raspi-blacklist.conf
+  echo 'AutoEnable=true' >> /etc/bluetooth/main.conf
   systemctl enable bluetooth.service
   systemctl enable brcm43438.service
 }
