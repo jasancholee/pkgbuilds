@@ -1,0 +1,13 @@
+# Maintainer: Dryamov Vyacheslav <dryamov.dev@gmail.com>
+pkgname=locale-gen-conf
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Setting for locale.gen"
+arch=('any')
+url="https://github.com/arpi4/PKGBUILDs"
+license=('GPL')
+install=locale-gen-conf.install
+source=("locale-gen-conf.install"
+	)
+md5sums=('SKIP')
+

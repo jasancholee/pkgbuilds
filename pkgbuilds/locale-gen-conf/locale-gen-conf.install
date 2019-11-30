@@ -1,0 +1,15 @@
+post_install() {
+        cp -vra "$pkgdir/etc/locale.gen" "$pkgdir/etc/locale.gen.bak"
+        sed -i 's/^# *\(en_US.UTF-8\)/\1/' "$pkgdir/etc/locale.gen"
+        sed -i 's/^# *\(ru_RU.UTF-8\)/\1/' "$pkgdir/etc/locale.gen"
+        locale-gen
+}
+post_upgrade () {
+        post_install
+}
+pre_upgrade () {
+        post_remove
+}
+post_remove() {
+        mv -v "$pkgdir/etc/locale.gen.bak" "$pkgdir/etc/locale.gen"
+}
