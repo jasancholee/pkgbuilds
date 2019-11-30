@@ -1,0 +1,22 @@
+post_install() {
+        cp -vra "$pkgdir/etc/vconsole.conf" "$pkgdir/etc/vconsole.conf.bak"
+        echo -e "LOCALE=ru_RU.UTF-8
+KEYMAP=ruwin_alt_sh-UTF-8
+FONT=ter-v16n
+CONSOLEMAP=
+TIMEZONE=Europe/Moscow
+USECOLOR=yes" > "$pkgdir/etc/vconsole.conf"
+        cp -vra "$pkgdir/etc/mkinitcpio.conf" "$pkgdir/etc/mkinitcpio.conf.bak"
+        echo "HOOKS=(systemd sd-vconsole autodetect modconf block filesystems keyboard fsck)" >> "$pkgdir/etc/mkinitcpio.conf";
+        mkinitcpio -P
+}
+post_upgrade () {
+        post_install
+}
+pre_upgrade () {
+        post_remove
+}
+post_remove() {
+        mv -v "$pkgdir/etc/mkinitcpio.conf.bak" "$pkgdir/etc/mkinitcpio.conf"
+        mv -v "$pkgdir/etc/vconsole.conf.bak" "$pkgdir/etc/vconsole.conf";
+}

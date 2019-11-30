@@ -1,0 +1,18 @@
+# Maintainer: Dryamov Vyacheslav <dryamov.dev@gmail.com>
+pkgname=vconsole-conf
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Setting for vconsole.conf"
+arch=('any')
+url="https://github.com/arpi4/PKGBUILDs"
+license=('GPL')
+install=vconsole-conf.install
+depends=("terminus-font"
+)
+source=("vconsole-conf.install"
+        "vconsole.conf"
+	)
+backup=("etc/vconsole.conf")
+md5sums=('SKIP'
+         'SKIP')
+
